@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  wordpress:
+    image: wordpress
+    depends_on:
+      - mysql
+    ports:
+      - "8080:80"
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_DATABASE
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_RANDOM_ROOT_PASSWORD
